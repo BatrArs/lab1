@@ -2,13 +2,18 @@
 
 using namespace std;
 
-std::wstring modAlphakey::encrypt(const std::wstring& open_text) // шифрование
+std::wstring modAlphakey::encrypt(std::wstring& open_text) // шифрование
 {
     wstring tabl = open_text;
     int dl, nstrok, index, x;
-    dl = open_text.length(); // введенный текст
+    while (tabl.size() % key1 != 0){
+        tabl += L"*";
+    }
+    open_text = tabl;
+    dl = tabl.size(); // введенный текст
     nstrok = (dl - 1) / key1 + 1; // количество столбцов
     x = 0;
+    wstring encrypted();
     for (int i = key1; i > 0; i--) { // столбцы
         for (int j = 0; j < nstrok; j++) { // строки
             index = i+key1*j;
@@ -21,7 +26,7 @@ std::wstring modAlphakey::encrypt(const std::wstring& open_text) // шифров
     return tabl;
 }
 
-std::wstring modAlphakey::decrypt(const std::wstring& cipher_text) // расшифрование
+std::wstring modAlphakey::decrypt(std::wstring& cipher_text) // расшифрование
 {
     wstring tabl = cipher_text;
     int dl, nstrok, index, x;
