@@ -13,6 +13,6 @@ private:
 public:
     modAlphakey()=delete; // запрет конструктора без параметров
     modAlphakey(const int& key) :key1(key) {};
-    std::wstring encrypt(const std::wstring& open_text); // зашифрование
-    std::wstring decrypt(const std::wstring& cipher_text); // расшифрование
+    std::wstring encrypt(std::wstring& open_text); // зашифрование
+    std::wstring decrypt(std::wstring& cipher_text); // расшифрование
 };
