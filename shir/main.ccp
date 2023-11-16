@@ -31,16 +31,13 @@ int main()
         } else if (op >0) {
             wcout<<L"Cipher ready. Input text: ";
             wcin>>text;
-            if (isValid(text)) {
                 if (op==1) {
                     wcout<<L"Encrypted text: "<<cipher.encrypt(text)<<endl;
                 } else {
                     wcout<<L"Decrypted text: "<<cipher.decrypt(text)<<endl;
                 }
-            } else {
-                wcout<<L"Operation aborted: invalid text\n";
-            }
         }
     } while (op!=0);
     return 0;
 }
+
